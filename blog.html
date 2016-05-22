@@ -1,0 +1,33 @@
+---
+layout: default
+title: Matt Saunders - Blog
+permalink: blog
+---
+
+<div class="container">
+  <div class="section--light section--narrow">
+    <div class="row">
+      <div class="sm-col-12">
+        <h1 class="no-margin">Blog<span class="yellow">.</a></h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="section--white section--narrow">
+    <div class="row">
+      <div class="sm-col-12 lg-col-11 xl-col-9">
+        <ul class="list-ui">
+          {% for post in site.posts %}
+            <li class="post-item">
+              <h2 class="post-item__title"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
+              <!-- <p class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</p> -->
+              <p>{{ post.excerpt }}</p>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

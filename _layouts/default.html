@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body>
+
+    {% include header.html %}
+
+    <div class="loader" style="display:none">
+      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24"><g stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" fill="none"><path d="M.5 10.354l2.787 4.151 3.205-3.838M23.072 14.655l-2.785-4.15-3.207 3.836M20.25 10.542c.834 4.408-2.273 8.729-6.51 9.729-2.953.699-5.916-.24-7.93-2.225M3.291 14.479c-1.312-4.882 1.971-9.673 6.539-10.753 3.156-.746 6.316.373 8.324 2.641"/></g></svg>
+    </div>
+
+    <div id="pjax-container">
+      {{ content }}
+    </div>
+
+    {% include footer.html %}
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+    <script src="{{ site.url }}js/jquery.scrollTo.min.js"></script>
+    <script src="{{ site.url }}js/jquery.pjax.min.js"></script>
+
+    <script>
+    $(function() {
+        $(document).pjax('a', '#pjax-container', { 
+            fragment: '#pjax-container',
+        })
+        .on('pjax:start', function() {
+          $('.loader').show();
+        })
+        .on('pjax:end', function() {
+          $('.loader').delay(1000).fadeOut();
+        });
+    });
+
+    jQuery('.overview-link').click(function(e){
+        e.preventDefault(); 
+        jQuery('body').scrollTo('#overview',{duration:'slow', offset:-60});
+    })
+
+    jQuery('.contact-link').click(function(e){
+        e.preventDefault();
+        jQuery('body').scrollTo('#contact',{duration:'slow', offset:-60});
+    })
+    </script>
+
+  </body>
+
+</html>

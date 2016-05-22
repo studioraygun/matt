@@ -1,0 +1,83 @@
+/*----------------------------------*\
+	#flexbox
+\*----------------------------------*/
+
+/**
+ *	Centre all divs in a row vertically
+ *
+ *	Usage:
+ *	<div class="lg-flexbox--centre-vertical">
+ *		<div>Some content</div>
+ *		<div>Lots more content that requires more vertical space</div>
+ *	</div>
+ *
+ *	This is ideal for aligning items vertically-middle, 
+ *	for example across a header bar
+ *
+ *	NOTE*** Because Flexbox destroys the grid system, it must be used in conjunction with it
+ *	For example, if two columns are set to float next to each other at large width, the flexbox
+ *	container must also be set to work in the same way, so lg-col and lg-flexbox-- etc.
+ */
+
+/**
+ Setup selector
+ */
+$selector: 'flexbox--center-vertical';
+
+/**
+ *	Create the class
+ */
+.sm-#{$selector}{
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	-webkit-box-align: center;
+
+	justify-content: center;
+	align-items: center;
+}
+	@media #{$md}{
+		.md-#{$selector}{
+			display: -ms-flexbox;
+			display: -webkit-flex;
+			display: flex;
+
+			-ms-flex-align: center;
+			-webkit-align-items: center;
+			-webkit-box-align: center;
+
+			justify-content: center;
+			align-items: center;
+		}
+	}
+	@media #{$lg}{
+		.lg-#{$selector}{
+			display: -ms-flexbox;
+			display: -webkit-flex;
+			display: flex;
+
+			-ms-flex-align: center;
+			-webkit-align-items: center;
+			-webkit-box-align: center;
+
+			justify-content: center;
+			align-items: center;
+		}
+	}
+	@media #{$xl}{
+		.xl-#{$selector}{
+			display: -ms-flexbox;
+			display: -webkit-flex;
+			display: flex;
+
+			-ms-flex-align: center;
+			-webkit-align-items: center;
+			-webkit-box-align: center;
+
+			justify-content: center;
+			align-items: center;
+		}
+	}

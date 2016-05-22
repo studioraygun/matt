@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Matt Saunders - Blog</title>
+  <meta name="description" content="I'm a UX and UI designer in Leeds, Yorkshire, offering my services to agencies and software development teams across the UK
+">
+
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,600,600italic' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://127.0.0.1:4000//blog">
+  <link rel="alternate" type="application/rss+xml" title="Matt Saunders - UX Designer for Agile Teams" href="http://127.0.0.1:4000//feed.xml">
+</head>
+
+
+  <body>
+
+    <div class="container">
+  <ul class="menu">
+    <span class="menu__name">
+      <li><a href="http://127.0.0.1:4000/" title="Go back to the homepage">Matt Saunders</a></li>
+    </span>
+    <span class="menu__links">
+      <li><a href="http://127.0.0.1:4000/blog" title="Read my blog">Blog</a></li>
+      <li><a href="http://127.0.0.1:4000/#contact" title="Get in touch with me">Contact me</a></li>
+    </span>
+  </ul>
+</div>
+
+    <div class="loader" style="display:none">
+      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24"><g stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" fill="none"><path d="M.5 10.354l2.787 4.151 3.205-3.838M23.072 14.655l-2.785-4.15-3.207 3.836M20.25 10.542c.834 4.408-2.273 8.729-6.51 9.729-2.953.699-5.916-.24-7.93-2.225M3.291 14.479c-1.312-4.882 1.971-9.673 6.539-10.753 3.156-.746 6.316.373 8.324 2.641"/></g></svg>
+    </div>
+
+    <div id="pjax-container">
+      <div class="container">
+  <div class="section--light section--narrow">
+    <div class="row">
+      <div class="sm-col-12">
+        <h1 class="no-margin">Blog<span class="yellow">.</a></h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="section--white section--narrow">
+    <div class="row">
+      <div class="sm-col-12 lg-col-11 xl-col-9">
+        <ul class="list-ui">
+          
+            <li class="post-item">
+              <h2 class="post-item__title"><a href="/2016/05/22/tips-for-designers-who-dont-code/">Tips for designers who don't code</a></h2>
+              <!-- <p class="post-meta">May 22, 2016</p> -->
+              <p><p>I hail from a design background, and moved into front-end development some years ago. With responsive web design, the requirement of the designer is shifting. Here are a few tips collated to help designers who don’t code.</p>
+
+</p>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+
+    <div class="container footer">
+  <div class="section--white section--narrow">
+    <div class="row">
+      <div class="sm-col-12">
+        <p class="footer__text">Matt Saunders, as well as being my name, is a trading name for Studio Raygun Ltd (company number 08852675, VAT number 239182013)</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+    <script src="http://127.0.0.1:4000/js/jquery.scrollTo.min.js"></script>
+    <script src="http://127.0.0.1:4000/js/jquery.pjax.min.js"></script>
+
+    <script>
+    $(function() {
+        $(document).pjax('a', '#pjax-container', { 
+            fragment: '#pjax-container',
+        })
+        .on('pjax:start', function() {
+          $('.loader').show();
+        })
+        .on('pjax:end', function() {
+          $('.loader').delay(1000).fadeOut();
+        });
+    });
+
+    jQuery('.overview-link').click(function(e){
+        e.preventDefault(); 
+        jQuery('body').scrollTo('#overview',{duration:'slow', offset:-60});
+    })
+
+    jQuery('.contact-link').click(function(e){
+        e.preventDefault();
+        jQuery('body').scrollTo('#contact',{duration:'slow', offset:-60});
+    })
+    </script>
+
+  </body>
+
+</html>

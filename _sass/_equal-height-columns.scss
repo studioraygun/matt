@@ -1,0 +1,59 @@
+/*----------------------------------*\
+	#one-true-layout
+\*----------------------------------*/
+/**
+ *	Helper classes which may be applied to any
+ *	type of element to add padding
+ *
+ *	Usage:
+ *	<div class="equal-height-columns">
+ *		<div class="equal-height-columns__column">
+ *			Some content
+ *		</div>
+ *		<div class="equal-height-columns__column">
+ *			Some content
+ *		</div>
+ *	</div>
+ *	This will ensure that both columns are the same height
+ *
+ *	Source: http://css-tricks.com/fluid-width-equal-height-columns/
+ */
+
+/**
+ *	Define a class for the containing element
+ *	This is to stop the padding/margin from spilling out of the container
+ */
+.equal-height-columns{
+	overflow:hidden;
+}
+	
+/**
+ *	Setup selector
+ */
+$selector:'equal-height-columns__column';
+
+/**
+ *	Create the class
+ */
+.sm-#{$selector}{
+	margin-bottom: -99999px;
+	padding-bottom: 99999px;
+}
+	@media #{$md}{
+		.md-#{$selector}{
+			margin-bottom: -99999px;
+			padding-bottom: 99999px;
+		}
+	}
+	@media #{$lg}{
+		.lg-#{$selector}{
+			margin-bottom: -99999px;
+			padding-bottom: 99999px;
+		}
+	}
+	@media #{$xl}{
+		.xl-#{$selector}{
+			margin-bottom: -99999px;
+			padding-bottom: 99999px;
+		}
+	}
